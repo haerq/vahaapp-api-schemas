@@ -2,9 +2,17 @@
     "type": "object",
     "properties": {
       "data": {
-        "type": "array",
-        "items": [
-          {
+        "anyOf": [
+            { "$ref": "#/definitions/data" },
+            {
+                "type": "array",
+                "items": { "$ref": "#/definitions/data" }
+            }
+        ]
+      }
+    },
+    "definitions": {
+        "data" : {
             "type": "object",
             "properties": {
               "id": {
@@ -23,9 +31,7 @@
               "deleted_at"
             ],
             "additionalProperties": false
-          }
-        ]
-      }
+        }
     },
     "required": [
       "data"
