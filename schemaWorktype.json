@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "deleted_at": {
+                "type": ["string", "null"]
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "deleted_at"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "required": [
+      "data"
+    ]
+  }
