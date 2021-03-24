@@ -1,0 +1,77 @@
+{
+    "type": "object",
+    "properties": {
+      "data": {
+        "anyOf": [
+            { "$ref": "#/definitions/data" },
+            {
+                "type": "array",
+                "items": { "$ref": "#/definitions/data" }
+            }
+        ]
+      }
+    },
+    "definitions": {
+        "data" : {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "ext_app_number": {
+                "type": "null"
+              },
+              "deleted_at": {
+                "type": "null"
+              },
+              "contacts": {
+                "type": "array",
+                "items": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "tax_number": {
+                        "type": "null"
+                      },
+                      "tax_number_checked": {
+                        "type": "null"
+                      },
+                      "avatar": {
+                        "type": "null"
+                      },
+                      "customer_id": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name",
+                      "customer_id"
+                    ]
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "required": [
+      "data"
+    ]
+  }
