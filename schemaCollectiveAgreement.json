@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+      "data": {
+        "anyOf": [
+            { "$ref": "#/definitions/data" },
+            {
+                "type": "array",
+                "items": { "$ref": "#/definitions/data" }
+            }
+        ]
+      }
+    },
+    "definitions": {
+        "data" : {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "deleted_at": {
+                "type": ["string", "null"]
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "description",
+              "deleted_at"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "required": [
+      "data"
+    ]
+  }
